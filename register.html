@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bit2Byte | Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Site header and navigation -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div>
+                <p class="eyebrow">KUET</p>
+                <h1>Bit2Byte</h1>
+                <p class="club-tagline">Software Research &amp; Development Community</p>
+            </div>
+            <nav aria-label="Primary navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="members.html">Members</a></li>
+                    <li><a class="active" href="register.html">Register</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-section container">
+        <h2 class="section-title">Register for Bit2Byte</h2>
+        <div class="form-wrapper">
+            <!-- Full registration form with common input types -->
+            <form action="login.html" method="get">
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="student-email">Email Address</label>
+                    <input type="email" id="student-email" name="student-email" placeholder="name@kuet.ac.bd" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Year of Study</label>
+                    <div class="inline-options">
+                        <label><input type="radio" name="year" value="first" required> First Year</label>
+                        <label><input type="radio" name="year" value="second"> Second Year</label>
+                        <label><input type="radio" name="year" value="third"> Third Year</label>
+                        <label><input type="radio" name="year" value="fourth"> Fourth Year</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Areas of Interest</label>
+                    <div class="inline-options">
+                        <label><input type="checkbox" name="interest" value="research"> Research</label>
+                        <label><input type="checkbox" name="interest" value="development"> Development</label>
+                        <label><input type="checkbox" name="interest" value="uiux"> UI/UX</label>
+                        <label><input type="checkbox" name="interest" value="competitive-programming"> Competitive Programming</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="club-role">Preferred Role</label>
+                    <select id="club-role" name="club-role" required>
+                        <option value="">Choose one</option>
+                        <option value="member">General Member</option>
+                        <option value="research">Research Contributor</option>
+                        <option value="developer">Developer</option>
+                        <option value="designer">Designer</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Why do you want to join?</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell us a little about your interests in software research and development"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button class="submit-button" type="submit">Submit Registration</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Bit2Byte, KUET. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
