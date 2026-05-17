@@ -226,6 +226,12 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Data\DatabaseHelper.cs" />
+    <Compile Include="Data\PasswordHelper.cs" />
+    <Compile Include="Data\UserRepository.cs" />
+    <Compile Include="Data\EventRepository.cs" />
+    <Compile Include="Data\Models\User.cs" />
+    <Compile Include="Data\Models\EventItem.cs" />
     <Compile Include="Members.aspx.cs">
       <DependentUpon>Members.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

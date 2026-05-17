@@ -11,5 +11,6 @@ namespace Bit2Byte
         public const string Message = "Message";
         public const string Authenticated = "Authenticated";
         public const string Registered = "Registered";
+        public const string UserId = "UserId";
     }
 }
