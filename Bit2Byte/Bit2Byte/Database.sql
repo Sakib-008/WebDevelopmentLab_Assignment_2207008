@@ -19,6 +19,7 @@ BEGIN
         Email NVARCHAR(256) NOT NULL UNIQUE,
         PasswordHash NVARCHAR(256) NOT NULL,
         IsActive BIT NOT NULL DEFAULT 1,
+        Role NVARCHAR(50) NOT NULL DEFAULT 'member',
         CreatedAt DATETIME NOT NULL DEFAULT GETDATE()
     );
 END
@@ -42,6 +43,18 @@ GO
 -- Sample inserts (optional) - replace password hashes before use
 -- INSERT INTO dbo.Users (Username, Email, PasswordHash) VALUES ('admin','admin@example.com','<replace-with-hash>');
 -- INSERT INTO dbo.Events (Title, Description, EventDate, CreatedByUserId) VALUES ('Launch','Project launch','2026-06-01',1);
+
+-- If you already have a Users table and need to add the Role column, run:
+IF EXISTS (SELECT 1 FROM sys.tables t JOIN sys.schemas s ON t.schema_id = s.schema_id WHERE t.name='Users' AND s.name='dbo')
+BEGIN
+    IF COL_LENGTH('dbo.Users','Role') IS NULL
+    BEGIN
+        ALTER TABLE dbo.Users ADD Role NVARCHAR(50) NOT NULL CONSTRAINT DF_Users_Role DEFAULT 'member';
+    END
+END
+
+-- Make an existing user an admin (replace email as needed):
+-- UPDATE dbo.Users SET Role='admin' WHERE Email='admin@example.com';
 
 -- Notes:
 -- 1) Open this file in SSMS and execute. If you use a different SQL Server instance, change the connection in Web.config accordingly.

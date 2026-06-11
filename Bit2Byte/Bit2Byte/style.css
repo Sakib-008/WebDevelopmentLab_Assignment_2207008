@@ -129,7 +129,12 @@ img {
 	border-radius: 8px;
 	border: 2px solid transparent;
 	font-weight: bold;
+	background: #0f4c81;
+	color: #ffffff;
+	text-decoration: none;
+	transition: background-color 0.15s ease, transform 0.08s ease;
 }
+
 
 .button-primary {
 	background: #0f4c81;
@@ -137,9 +142,9 @@ img {
 }
 
 .button-secondary {
-	background: #ffffff;
+	background: #f6fbff;
 	color: #0f4c81;
-	border-color: #0f4c81;
+	border-color: #8aa9cc;
 }
 
 .button:hover {
@@ -396,6 +401,112 @@ img {
 	margin-bottom: 1rem;
 	color: #0f7a3d;
 	font-weight: bold;
+}
+
+/* Admin page helpers */
+.admin-toolbar {
+	margin-bottom: 1rem;
+}
+
+.btn {
+	display: inline-block;
+	padding: 0.5rem 0.9rem;
+	border-radius: 8px;
+	text-decoration: none;
+	font-weight: 600;
+	background: #0f4c81;
+	color: #ffffff;
+	border: 1px solid #0f4c81;
+}
+
+.btn-primary {
+	background: #0f4c81;
+	color: #ffffff;
+	border: 1px solid #0f4c81;
+}
+
+.btn-outline-secondary {
+	border: 1px solid #8aa9cc;
+	color: #173b5a;
+	background: #ffffff;
+}
+
+.btn-outline-secondary:hover {
+	background: #0f4c81;
+	color: #ffffff;
+}
+
+.panel h3 {
+	color: #0f4c81;
+	margin-top: 0;
+}
+
+.panel .form-group .form-control,
+.panel .form-control {
+	border: 1px solid #c9d7e8;
+}
+
+.panel .gridview {
+	width: 100%;
+}
+
+/* Admin grid/table styling */
+.admin-grid {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.95rem;
+}
+.admin-grid th {
+	background: linear-gradient(180deg,#0f4c81,#08314f);
+	color: #ffffff;
+	padding: 0.85rem;
+	text-align: left;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+}
+.admin-grid td {
+	padding: 0.75rem;
+	border-bottom: 1px solid #e6eef8;
+	vertical-align: middle;
+	color: #0f2a44;
+}
+.admin-grid tr:nth-child(even) {
+	background: #f8fbff;
+}
+.admin-grid tr:hover {
+	background: #e8f1fb;
+}
+.admin-grid a {
+	color: #0f4c81;
+	text-decoration: none;
+	padding: 0.35rem 0.6rem;
+	border-radius: 6px;
+}
+.admin-grid a:hover {
+	color: #08314f;
+	background: rgba(15,76,129,0.06);
+}
+.admin-grid .cmd-link {
+	display: inline-block;
+	padding: 0.35rem 0.6rem;
+	border-radius: 6px;
+	background: #f6fbff;
+	border: 1px solid #e0eef9;
+	color: #0f4c81;
+}
+.admin-grid .cmd-link:hover {
+	background: #0f4c81;
+	color: #fff;
+}
+.admin-grid .edit-row {
+	background: #fff8e6;
+}
+
+.admin-toolbar {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	margin-bottom: 1rem;
 }
 
 /* Footer */

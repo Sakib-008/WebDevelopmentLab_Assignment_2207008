@@ -17,6 +17,15 @@ namespace Bit2Byte
             LogoutNavItem.Visible = isAuthenticated;
             LoginNavItem.Visible = !isAuthenticated;
             RegisterNavItem.Visible = !isAuthenticated;
+            bool isAdmin = false;
+            var userIdObj = Session[SessionKeys.UserId];
+            if (userIdObj is int uid)
+            {
+                var repo = new Data.UserRepository();
+                var user = repo.GetById(uid);
+                isAdmin = user != null && string.Equals(user.Role, "admin", StringComparison.OrdinalIgnoreCase);
+            }
+            AdminNavItem.Visible = isAdmin;
         }
     }
 }

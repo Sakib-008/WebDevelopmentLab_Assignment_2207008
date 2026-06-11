@@ -43,6 +43,11 @@ namespace Bit2Byte
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl RegisterNavItem;
 
         /// <summary>
+        /// AdminNavItem control.
+        /// </summary>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AdminNavItem;
+
+        /// <summary>
         /// LoginNavItem control.
         /// </summary>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl LoginNavItem;

@@ -31,7 +31,8 @@ namespace Bit2Byte
                 Username = FullNameTextBox.Text.Trim(),
                 Email = EmailTextBox.Text.Trim(),
                 PasswordHash = PasswordHelper.HashPassword(PasswordTextBox.Text),
-                IsActive = true
+                IsActive = true,
+                Role = RoleDropDown.SelectedValue ?? "member"
             };
 
             try

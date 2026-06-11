@@ -24,22 +24,20 @@ namespace Bit2Byte
 
             var email = EmailTextBox.Text.Trim();
             var password = PasswordTextBox.Text;
-            var registeredEmail = Convert.ToString(Session[SessionKeys.Email]);
-            var registeredPassword = Convert.ToString(Session[SessionKeys.Password]);
 
-            var hasStoredAccount = !string.IsNullOrWhiteSpace(registeredEmail) && !string.IsNullOrWhiteSpace(registeredPassword);
-            var matchesStoredAccount = hasStoredAccount && string.Equals(email, registeredEmail, StringComparison.OrdinalIgnoreCase) && password == registeredPassword;
-            var demoLogin = !hasStoredAccount && email.EndsWith("@kuet.ac.bd", StringComparison.OrdinalIgnoreCase) && password.Length >= 8;
+            var repo = new Bit2Byte.Data.UserRepository();
+            var user = repo.GetByEmail(email);
 
-            if (matchesStoredAccount || demoLogin)
+            if (user != null && Bit2Byte.Data.PasswordHelper.VerifyPassword(password, user.PasswordHash) && user.IsActive)
             {
-                Session[SessionKeys.Email] = email;
+                Session[SessionKeys.UserId] = user.Id;
                 Session[SessionKeys.Authenticated] = true;
+                Session[SessionKeys.Role] = user.Role;
                 Response.Redirect(ResolveUrl("~/members.aspx"), true);
                 return;
             }
 
-            StatusLabel.Text = "<div class=\"validation-error\">Invalid credentials. Register first or use the same KUET email and password you registered with.</div>";
+            StatusLabel.Text = "<div class=\"validation-error\">Invalid credentials. Make sure you registered and used the correct password.</div>";
         }
 
         private bool IsUserAuthenticated()

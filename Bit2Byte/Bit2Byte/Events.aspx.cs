@@ -8,16 +8,28 @@ namespace Bit2Byte
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Load events into ViewState for possible display in the markup
             var repo = new EventRepository();
             try
             {
                 var events = repo.GetAll();
-                ViewState["EventsList"] = events;
+                var list = events == null ? new System.Collections.Generic.List<Data.Models.EventItem>() : new System.Collections.Generic.List<Data.Models.EventItem>(events);
+                if (list.Count == 0)
+                {
+                    EventsStatus.Text = "<div class=\"panel\"><h3>No upcoming events</h3><p>There are currently no scheduled events. Check back later or contact an administrator to add events.</p></div>";
+                    EventsRepeater.DataSource = null;
+                    EventsRepeater.DataBind();
+                }
+                else
+                {
+                    EventsStatus.Text = string.Empty;
+                    EventsRepeater.DataSource = list;
+                    EventsRepeater.DataBind();
+                }
             }
-            catch
+            catch (Exception ex)
             {
-                // ignore DB errors for now; the page will fall back to static content
+                EventsStatus.Text = "<div class=\"validation-error\">Error loading events.</div>";
+                System.Diagnostics.Trace.TraceError("Events load error: " + ex);
             }
         }
     }

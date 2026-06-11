@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "S:\\Self\\Web Dev\\Local\\Bit2Byte\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{91C70CCE-42EF-4B24-BAAA-FA90FE71F338}|Bit2Byte\\Bit2Byte.csproj|s:\\self\\web dev\\local\\bit2byte\\bit2byte\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{91C70CCE-42EF-4B24-BAAA-FA90FE71F338}|Bit2Byte\\Bit2Byte.csproj|s:\\self\\web dev\\local\\bit2byte\\bit2byte\\admin\\users.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{91C70CCE-42EF-4B24-BAAA-FA90FE71F338}|Bit2Byte\\Bit2Byte.csproj|solutionrelative:bit2byte\\admin\\users.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91C70CCE-42EF-4B24-BAAA-FA90FE71F338}|Bit2Byte\\Bit2Byte.csproj|S:\\Self\\Web Dev\\Local\\Bit2Byte\\bit2byte\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{91C70CCE-42EF-4B24-BAAA-FA90FE71F338}|Bit2Byte\\Bit2Byte.csproj|solutionrelative:bit2byte\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
@@ -19,6 +23,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Users.aspx",
+              "DocumentMoniker": "S:\\Self\\Web Dev\\Local\\Bit2Byte\\Bit2Byte\\Admin\\Users.aspx",
+              "RelativeDocumentMoniker": "Bit2Byte\\Admin\\Users.aspx",
+              "ToolTip": "S:\\Self\\Web Dev\\Local\\Bit2Byte\\Bit2Byte\\Admin\\Users.aspx",
+              "RelativeToolTip": "Bit2Byte\\Admin\\Users.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-06-11T16:41:47.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Default.aspx",
               "DocumentMoniker": "S:\\Self\\Web Dev\\Local\\Bit2Byte\\Bit2Byte\\Default.aspx",
               "RelativeDocumentMoniker": "Bit2Byte\\Default.aspx",
@@ -26,8 +43,7 @@
               "RelativeToolTip": "Bit2Byte\\Default.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-05-02T12:03:00.065Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-02T12:03:00.065Z"
             }
           ]
         }

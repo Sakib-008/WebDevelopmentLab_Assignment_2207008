@@ -13,12 +13,13 @@ namespace Bit2Byte.Data
             using (var conn = DatabaseHelper.GetOpenConnection())
             using (var cmd = conn.CreateCommand())
             {
-                cmd.CommandText = @"INSERT INTO dbo.Users (Username, Email, PasswordHash, IsActive)
-                                     VALUES (@u,@e,@p,@a); SELECT SCOPE_IDENTITY();";
+                cmd.CommandText = @"INSERT INTO dbo.Users (Username, Email, PasswordHash, IsActive, Role)
+                                     VALUES (@u,@e,@p,@a,@r); SELECT SCOPE_IDENTITY();";
                 cmd.Parameters.AddWithValue("@u", user.Username);
                 cmd.Parameters.AddWithValue("@e", user.Email);
                 cmd.Parameters.AddWithValue("@p", user.PasswordHash);
                 cmd.Parameters.AddWithValue("@a", user.IsActive);
+                cmd.Parameters.AddWithValue("@r", (object)user.Role ?? "member");
 
                 var id = cmd.ExecuteScalar();
                 return Convert.ToInt32(id);
@@ -30,7 +31,7 @@ namespace Bit2Byte.Data
             using (var conn = DatabaseHelper.GetOpenConnection())
             using (var cmd = conn.CreateCommand())
             {
-                cmd.CommandText = "SELECT Id, Username, Email, PasswordHash, IsActive, CreatedAt FROM dbo.Users WHERE Id=@id";
+                cmd.CommandText = "SELECT Id, Username, Email, PasswordHash, Role, IsActive, CreatedAt FROM dbo.Users WHERE Id=@id";
                 cmd.Parameters.AddWithValue("@id", id);
                 using (var r = cmd.ExecuteReader())
                 {
@@ -48,8 +49,23 @@ namespace Bit2Byte.Data
             using (var conn = DatabaseHelper.GetOpenConnection())
             using (var cmd = conn.CreateCommand())
             {
-                cmd.CommandText = "SELECT Id, Username, Email, PasswordHash, IsActive, CreatedAt FROM dbo.Users WHERE Username=@u";
+                cmd.CommandText = "SELECT Id, Username, Email, PasswordHash, Role, IsActive, CreatedAt FROM dbo.Users WHERE Username=@u";
                 cmd.Parameters.AddWithValue("@u", username);
+                using (var r = cmd.ExecuteReader())
+                {
+                    if (r.Read()) return Map(r);
+                }
+            }
+            return null;
+        }
+
+        public User GetByEmail(string email)
+        {
+            using (var conn = DatabaseHelper.GetOpenConnection())
+            using (var cmd = conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT Id, Username, Email, PasswordHash, Role, IsActive, CreatedAt FROM dbo.Users WHERE Email=@e";
+                cmd.Parameters.AddWithValue("@e", email);
                 using (var r = cmd.ExecuteReader())
                 {
                     if (r.Read()) return Map(r);
@@ -64,7 +80,7 @@ namespace Bit2Byte.Data
             using (var conn = DatabaseHelper.GetOpenConnection())
             using (var cmd = conn.CreateCommand())
             {
-                cmd.CommandText = "SELECT Id, Username, Email, PasswordHash, IsActive, CreatedAt FROM dbo.Users ORDER BY CreatedAt DESC";
+                cmd.CommandText = "SELECT Id, Username, Email, PasswordHash, Role, IsActive, CreatedAt FROM dbo.Users ORDER BY CreatedAt DESC";
                 using (var r = cmd.ExecuteReader())
                 {
                     while (r.Read()) list.Add(Map(r));
@@ -78,11 +94,12 @@ namespace Bit2Byte.Data
             using (var conn = DatabaseHelper.GetOpenConnection())
             using (var cmd = conn.CreateCommand())
             {
-                cmd.CommandText = "UPDATE dbo.Users SET Username=@u, Email=@e, PasswordHash=@p, IsActive=@a WHERE Id=@id";
+                cmd.CommandText = "UPDATE dbo.Users SET Username=@u, Email=@e, PasswordHash=@p, IsActive=@a, Role=@r WHERE Id=@id";
                 cmd.Parameters.AddWithValue("@u", user.Username);
                 cmd.Parameters.AddWithValue("@e", user.Email);
                 cmd.Parameters.AddWithValue("@p", user.PasswordHash);
                 cmd.Parameters.AddWithValue("@a", user.IsActive);
+                cmd.Parameters.AddWithValue("@r", (object)user.Role ?? "member");
                 cmd.Parameters.AddWithValue("@id", user.Id);
                 cmd.ExecuteNonQuery();
             }
@@ -101,14 +118,15 @@ namespace Bit2Byte.Data
 
         private User Map(SqlDataReader r)
         {
-            return new User
+                return new User
             {
                 Id = r.GetInt32(r.GetOrdinal("Id")),
                 Username = r.GetString(r.GetOrdinal("Username")),
                 Email = r.GetString(r.GetOrdinal("Email")),
                 PasswordHash = r.GetString(r.GetOrdinal("PasswordHash")),
-                IsActive = r.GetBoolean(r.GetOrdinal("IsActive")),
-                CreatedAt = r.GetDateTime(r.GetOrdinal("CreatedAt"))
+                    Role = r.IsDBNull(r.GetOrdinal("Role")) ? "member" : r.GetString(r.GetOrdinal("Role")),
+                    IsActive = r.GetBoolean(r.GetOrdinal("IsActive")),
+                    CreatedAt = r.GetDateTime(r.GetOrdinal("CreatedAt"))
             };
         }
     }
