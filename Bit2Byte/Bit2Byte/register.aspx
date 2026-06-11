@@ -1,9 +1,13 @@
 <%@ Page Title="Register" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Bit2Byte.Register" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <main class="page-section container">
-        <h2 class="section-title">Register for Bit2Byte</h2>
-        <div class="form-wrapper">
+    <main class="page-section container register-page">
+        <div class="register-hero panel">
+            <p class="eyebrow">Join the club</p>
+            <h2 class="section-title">Register for Bit2Byte</h2>
+            <p>Share your details and interests so we can place you in the right research and development activities.</p>
+        </div>
+        <div class="form-wrapper registration-form">
             <asp:ValidationSummary ID="RegisterValidationSummary" runat="server" CssClass="validation-summary" HeaderText="Please fix the following:" />
             <asp:Label ID="StatusLabel" runat="server" EnableViewState="false" />
 
@@ -29,7 +33,7 @@
 
             <div class="form-group">
                 <asp:Label runat="server" Text="Year of Study" />
-                <asp:RadioButtonList ID="YearList" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow" CssClass="inline-options">
+                <asp:RadioButtonList ID="YearList" runat="server" ClientIDMode="Static" RepeatDirection="Horizontal" RepeatLayout="Table" RepeatColumns="4" CssClass="choice-grid year-grid">
                     <asp:ListItem Value="first">First Year</asp:ListItem>
                     <asp:ListItem Value="second">Second Year</asp:ListItem>
                     <asp:ListItem Value="third">Third Year</asp:ListItem>
@@ -40,7 +44,7 @@
 
             <div class="form-group">
                 <asp:Label runat="server" Text="Areas of Interest" />
-                <asp:CheckBoxList ID="InterestList" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow" CssClass="inline-options">
+                <asp:CheckBoxList ID="InterestList" runat="server" ClientIDMode="Static" RepeatDirection="Horizontal" RepeatLayout="Table" RepeatColumns="2" CssClass="choice-grid interest-grid">
                     <asp:ListItem Value="research">Research</asp:ListItem>
                     <asp:ListItem Value="development">Development</asp:ListItem>
                     <asp:ListItem Value="uiux">UI/UX</asp:ListItem>

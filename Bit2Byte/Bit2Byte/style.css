@@ -229,7 +229,7 @@ img {
 
 /* Forms */
 .form-wrapper {
-	max-width: 760px;
+	max-width: none;
 	margin: 0 auto;
 	background: #ffffff;
 	border: 1px solid #dbe3ef;
@@ -241,7 +241,7 @@ img {
 	margin-bottom: 1rem;
 }
 
-.form-group label {
+.form-group > label {
 	display: block;
 	margin-bottom: 0.35rem;
 	font-weight: bold;
@@ -258,14 +258,105 @@ img {
 	background: #ffffff;
 }
 
-.inline-options {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1rem;
+.choice-grid {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 1rem 0.75rem;
 }
 
-.inline-options label {
+.choice-grid label {
 	font-weight: normal;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.7rem;
+	margin: 0;
+	white-space: normal;
+}
+
+.choice-grid input {
+	width: auto;
+	margin: 0;
+	flex: 0 0 auto;
+}
+
+.year-grid {
+	width: 100%;
+}
+
+.interest-grid {
+	width: 100%;
+}
+
+.choice-grid td {
+	padding: 0.35rem 1rem 0.35rem 0;
+	vertical-align: top;
+}
+
+#YearList,
+#InterestList {
+	width: 100%;
+}
+
+#YearList table,
+#InterestList table {
+	width: 100%;
+	table-layout: fixed;
+}
+
+#YearList table tr,
+#InterestList table tr {
+	display: grid;
+	width: 100%;
+}
+
+#YearList table tr {
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	column-gap: 1.75rem;
+	row-gap: 0.5rem;
+}
+
+#InterestList table tr {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	column-gap: 1.5rem;
+	row-gap: 0.75rem;
+}
+
+#YearList td,
+#InterestList td {
+	display: flex;
+	align-items: center;
+	padding: 0.35rem 0.75rem 0.35rem 0;
+	vertical-align: top;
+}
+
+#YearList label,
+#InterestList label {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.7rem;
+	white-space: nowrap;
+}
+
+.register-page {
+	display: grid;
+	grid-template-columns: minmax(300px, 1fr) minmax(520px, 1.6fr);
+	gap: 2rem;
+	align-items: start;
+	width: min(1320px, 96%);
+}
+
+.register-hero {
+	position: sticky;
+	top: 1.25rem;
+	background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+}
+
+.registration-form {
+	max-width: none;
+}
+
+.auth-panel {
+	text-align: left;
 }
 
 .submit-button {
@@ -318,6 +409,20 @@ img {
 
 /* Responsive adjustments */
 @media (max-width: 640px) {
+	.choice-grid td {
+		display: block;
+		width: 100%;
+	}
+
+	.register-page {
+		grid-template-columns: 1fr;
+		width: 100%;
+	}
+
+	.register-hero {
+		position: static;
+	}
+
 	.nav-list {
 		flex-direction: column;
 		width: 100%;

@@ -50,9 +50,10 @@
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Default.aspx">Home</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/about.aspx">About</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/events.aspx">Events</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/members.aspx">Members</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/register.aspx">Register</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/login.aspx">Login</a></li>
+                        <li class="nav-item" id="MembersNavItem" runat="server"><a class="nav-link" runat="server" href="~/members.aspx">Members</a></li>
+                        <li class="nav-item" id="RegisterNavItem" runat="server"><a class="nav-link" runat="server" href="~/register.aspx">Register</a></li>
+                        <li class="nav-item" id="LoginNavItem" runat="server"><a class="nav-link" runat="server" href="~/login.aspx">Login</a></li>
+                        <li class="nav-item" id="LogoutNavItem" runat="server"><a class="nav-link" runat="server" href="~/Logout.aspx">Logout</a></li>
                     </ul>
                 </div>
             </div>

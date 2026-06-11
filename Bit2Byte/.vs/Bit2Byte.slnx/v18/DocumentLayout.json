@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "S:\\3-1\\CSE 3100 (Web Programming Laboratory)\\Project 1\\Bit2Byte\\",
+  "WorkspaceRootPath": "S:\\Self\\Web Dev\\Local\\Bit2Byte\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{91C70CCE-42EF-4B24-BAAA-FA90FE71F338}|Bit2Byte\\Bit2Byte.csproj|s:\\3-1\\cse 3100 (web programming laboratory)\\project 1\\bit2byte\\bit2byte\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{91C70CCE-42EF-4B24-BAAA-FA90FE71F338}|Bit2Byte\\Bit2Byte.csproj|s:\\self\\web dev\\local\\bit2byte\\bit2byte\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{91C70CCE-42EF-4B24-BAAA-FA90FE71F338}|Bit2Byte\\Bit2Byte.csproj|solutionrelative:bit2byte\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
@@ -20,9 +20,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Default.aspx",
-              "DocumentMoniker": "S:\\3-1\\CSE 3100 (Web Programming Laboratory)\\Project 1\\Bit2Byte\\Bit2Byte\\Default.aspx",
+              "DocumentMoniker": "S:\\Self\\Web Dev\\Local\\Bit2Byte\\Bit2Byte\\Default.aspx",
               "RelativeDocumentMoniker": "Bit2Byte\\Default.aspx",
-              "ToolTip": "S:\\3-1\\CSE 3100 (Web Programming Laboratory)\\Project 1\\Bit2Byte\\Bit2Byte\\Default.aspx",
+              "ToolTip": "S:\\Self\\Web Dev\\Local\\Bit2Byte\\Bit2Byte\\Default.aspx",
               "RelativeToolTip": "Bit2Byte\\Default.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",

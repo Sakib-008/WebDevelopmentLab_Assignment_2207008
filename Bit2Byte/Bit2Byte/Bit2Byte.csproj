@@ -123,6 +123,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
+    <Content Include="Logout.aspx" />
     <Content Include="Members.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="script.js" />
@@ -226,12 +227,17 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Data\DatabaseHelper.cs" />
     <Compile Include="Data\PasswordHelper.cs" />
     <Compile Include="Data\UserRepository.cs" />
     <Compile Include="Data\EventRepository.cs" />
     <Compile Include="Data\Models\User.cs" />
     <Compile Include="Data\Models\EventItem.cs" />
+    <Compile Include="ProtectedPage.cs" />
     <Compile Include="Members.aspx.cs">
       <DependentUpon>Members.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

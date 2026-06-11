@@ -11,7 +11,12 @@ namespace Bit2Byte
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var isAuthenticated = Session[SessionKeys.Authenticated] is bool authenticated && authenticated;
 
+            MembersNavItem.Visible = isAuthenticated;
+            LogoutNavItem.Visible = isAuthenticated;
+            LoginNavItem.Visible = !isAuthenticated;
+            RegisterNavItem.Visible = !isAuthenticated;
         }
     }
 }

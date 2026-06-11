@@ -31,5 +31,25 @@ namespace Bit2Byte
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+
+        /// <summary>
+        /// MembersNavItem control.
+        /// </summary>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MembersNavItem;
+
+        /// <summary>
+        /// RegisterNavItem control.
+        /// </summary>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl RegisterNavItem;
+
+        /// <summary>
+        /// LoginNavItem control.
+        /// </summary>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LoginNavItem;
+
+        /// <summary>
+        /// LogoutNavItem control.
+        /// </summary>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LogoutNavItem;
     }
 }

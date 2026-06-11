@@ -4,7 +4,7 @@ using Bit2Byte.Data;
 
 namespace Bit2Byte
 {
-    public partial class Events : Page
+    public partial class Events : ProtectedPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
