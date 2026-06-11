@@ -509,6 +509,126 @@ img {
 	margin-bottom: 1rem;
 }
 
+/* ----------------------
+   Dark theme overrides
+   ---------------------- */
+:root{
+	--bg:#0b1220;
+	--surface:#071421;
+	--card-bg:#0f2433;
+	--panel-border:rgba(255,255,255,0.04);
+	--text:#dbefff;
+	--muted:#9fb6d0;
+	--accent:#f2b134;
+	--accent-contrast:#1b1b1b;
+	--link:#88c6ff;
+}
+
+body{
+	background: linear-gradient(180deg, var(--bg) 0%, #071826 100%);
+	color: var(--text);
+}
+
+a{ color: var(--link); }
+
+.site-header{ background: linear-gradient(180deg,#071428,#072033); color: var(--text); border-bottom-color: rgba(255,255,255,0.04); }
+
+.card, .panel, .form-wrapper{ background: var(--card-bg); border: 1px solid var(--panel-border); color: var(--text); }
+
+.button, .btn, .submit-button{ background: var(--accent); color: var(--accent-contrast); border-color: transparent; }
+.button-secondary, .btn-outline-secondary{ background: transparent; color: var(--text); border-color: rgba(255,255,255,0.06); }
+.button-secondary:hover, .btn-outline-secondary:hover{ background: rgba(242,177,52,0.12); color: var(--text); }
+
+/* form inputs on dark */
+.form-group input, .form-group select, .form-group textarea, .form-control{ background: rgba(255,255,255,0.03); color: var(--text); border: 1px solid rgba(255,255,255,0.06); }
+
+.events-table, .admin-grid{ background: transparent; border: 1px solid rgba(255,255,255,0.04); }
+.events-table thead th, .admin-grid th{ background: linear-gradient(180deg,#082033,#063045); color: var(--text); }
+.events-table td, .admin-grid td{ color: var(--text); border-color: rgba(255,255,255,0.03); }
+
+.card h3{ color: var(--accent); }
+.muted{ color: var(--muted); }
+
+.validation-error{ color: #ffb4b4; }
+.success-message{ color: #b7f5c9; }
+
+/* Action links/buttons contrast */
+.cmd-link{ background: rgba(255,255,255,0.03); color: var(--text); border:1px solid rgba(255,255,255,0.03); }
+.cmd-link:hover{ background: var(--accent); color: var(--accent-contrast); }
+
+/* Make GridView action buttons stand out */
+.admin-grid .btn-primary{ background: var(--accent); color: var(--accent-contrast); border-color: rgba(0,0,0,0.15); }
+
+/* Responsive tweak for event cards */
+@media (max-width:700px){
+	.card-grid{ grid-template-columns: 1fr; }
+	.register-page{ grid-template-columns: 1fr; }
+}
+
+/* Strong overrides to ensure buttons/nav are visible (higher specificity) */
+nav.navbar .nav-link,
+.nav-link,
+.navbar-brand,
+.navbar .nav-item a {
+	color: var(--text) !important;
+	background: transparent !important;
+}
+
+/* make nav items visibly distinct */
+nav.navbar .nav-link {
+	padding: 0.5rem 0.75rem !important;
+	border-radius: 8px;
+}
+nav.navbar .nav-link:hover,
+nav.navbar .nav-link.active,
+.nav-item .nav-link.active {
+	background: rgba(255,255,255,0.06) !important;
+	color: var(--text) !important;
+}
+
+/* Buttons and inputs global override */
+button, input[type=submit], .submit-button, .btn, .button {
+	background: var(--accent) !important;
+	color: var(--accent-contrast) !important;
+	border-color: transparent !important;
+}
+
+/* Restore clear hover/focus styling for navbar links (Register/Login) */
+nav.navbar .nav-link:hover,
+nav.navbar .nav-link:focus,
+.nav-item .nav-link.active {
+	background: var(--accent) !important;
+	color: var(--accent-contrast) !important;
+	box-shadow: 0 6px 18px rgba(11,18,32,0.45);
+	transform: translateY(-1px);
+}
+
+/* Slight transition for nav links to make hover smooth */
+nav.navbar .nav-link {
+	transition: background-color 0.12s ease, transform 0.08s ease, color 0.12s ease;
+}
+
+/* Secondary buttons */
+.btn-outline-secondary, .button-secondary {
+	background: rgba(255,255,255,0.03) !important;
+	color: var(--text) !important;
+	border: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+/* Make anchor buttons behave like buttons */
+a.btn, a.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Ensure form placeholders and labels are readable */
+input::placeholder, textarea::placeholder {
+	color: rgba(255,255,255,0.45) !important;
+}
+
+
+
 /* Footer */
 .site-footer {
 	background: #10263f;
