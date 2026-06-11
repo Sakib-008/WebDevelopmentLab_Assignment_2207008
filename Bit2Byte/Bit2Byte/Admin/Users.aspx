@@ -5,8 +5,12 @@
         <h2 class="section-title">Admin &mdash; Users</h2>
         <div class="admin-toolbar"><asp:HyperLink runat="server" CssClass="btn btn-outline-secondary" NavigateUrl="~/Admin/Events.aspx">Manage Events</asp:HyperLink></div>
         <asp:Literal ID="StatusLiteral" runat="server" />
-        <asp:GridView ID="UsersGrid" runat="server" AutoGenerateColumns="false" CssClass="panel admin-grid" GridLines="Both" DataKeyNames="Id"
+        <section class="panel admin-table-panel">
+        <asp:GridView ID="UsersGrid" runat="server" AutoGenerateColumns="false" CssClass="admin-grid" GridLines="Both" DataKeyNames="Id"
             OnRowDeleting="UsersGrid_RowDeleting" OnRowEditing="UsersGrid_RowEditing" OnRowCancelingEdit="UsersGrid_RowCancelingEdit" OnRowUpdating="UsersGrid_RowUpdating">
+            <HeaderStyle CssClass="admin-grid-header" />
+            <RowStyle CssClass="admin-grid-row" />
+            <AlternatingRowStyle CssClass="admin-grid-row-alt" />
             <Columns>
                 <asp:BoundField DataField="Id" HeaderText="#" />
                 <asp:BoundField DataField="Username" HeaderText="Name" />
@@ -27,5 +31,6 @@
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
+        </section>
     </main>
 </asp:Content>

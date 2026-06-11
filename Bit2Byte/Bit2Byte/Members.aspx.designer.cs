@@ -12,5 +12,8 @@ namespace Bit2Byte
     public partial class Members
     {
         protected global::System.Web.UI.WebControls.Literal GreetingLiteral;
+        protected global::System.Web.UI.WebControls.HyperLink ProfileLink;
+        protected global::System.Web.UI.WebControls.Panel EmptyMembersPanel;
+        protected global::System.Web.UI.WebControls.Repeater MembersRepeater;
     }
 }

@@ -15,7 +15,8 @@
             </div>
             <div class="form-group">
                 <asp:Label runat="server" AssociatedControlID="NewDate" Text="Event Date" />
-                <asp:TextBox ID="NewDate" runat="server" TextMode="DateTime" CssClass="form-control" />
+                <asp:TextBox ID="NewDate" runat="server" TextMode="DateTime" CssClass="form-control" placeholder="2026-06-12 14:30" />
+                <p class="form-hint muted">Format: yyyy-MM-dd HH:mm (example: 2026-06-12 14:30). Date only, such as 2026-06-12, also works.</p>
             </div>
             <div class="form-group">
                 <asp:Label runat="server" AssociatedControlID="NewDescription" Text="Description" />
@@ -26,10 +27,13 @@
             </div>
         </section>
 
-        <section class="panel">
+        <section class="panel admin-table-panel">
             <h3>Existing Events</h3>
-            <asp:GridView ID="EventsGrid" runat="server" AutoGenerateColumns="false" CssClass="panel admin-grid" DataKeyNames="Id"
+            <asp:GridView ID="EventsGrid" runat="server" AutoGenerateColumns="false" CssClass="admin-grid" DataKeyNames="Id"
                 OnRowEditing="EventsGrid_RowEditing" OnRowCancelingEdit="EventsGrid_RowCancelingEdit" OnRowUpdating="EventsGrid_RowUpdating" OnRowDeleting="EventsGrid_RowDeleting">
+                <HeaderStyle CssClass="admin-grid-header" />
+                <RowStyle CssClass="admin-grid-row" />
+                <AlternatingRowStyle CssClass="admin-grid-row-alt" />
                 <Columns>
                     <asp:BoundField DataField="Id" HeaderText="#" ReadOnly="true" />
                     <asp:BoundField DataField="Title" HeaderText="Title" />

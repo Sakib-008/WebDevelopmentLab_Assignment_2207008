@@ -4,6 +4,40 @@
     <main class="page-section container">
         <h2 class="section-title">Meet Our Members</h2>
         <asp:Literal ID="GreetingLiteral" runat="server" />
+        <p><asp:HyperLink ID="ProfileLink" runat="server" CssClass="btn btn-outline-secondary" NavigateUrl="~/Members/Profile.aspx">My Profile</asp:HyperLink></p>
+
+        <section class="panel member-directory">
+            <p class="eyebrow">Community</p>
+            <h3>All Members</h3>
+            <p class="muted">Browse active members of the Bit2Byte community.</p>
+
+            <asp:Panel ID="EmptyMembersPanel" runat="server" Visible="false" CssClass="member-directory-empty">
+                <p class="muted">No active members to display yet.</p>
+            </asp:Panel>
+
+            <asp:Repeater ID="MembersRepeater" runat="server">
+                <HeaderTemplate>
+                    <div class="member-directory-grid">
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <article class="member-card">
+                        <div class="member-card-avatar">
+                            <img src="<%# GetAvatarUrl(Eval("AvatarPath")) %>" alt="<%# Server.HtmlEncode(Convert.ToString(Eval("Username"))) %>" />
+                        </div>
+                        <div class="member-card-body">
+                            <h4><%# Server.HtmlEncode(Convert.ToString(Eval("Username"))) %></h4>
+                            <span class="member-role-badge"><%# Server.HtmlEncode(FormatRole(Eval("Role"))) %></span>
+                            <p class="member-bio"><%# Server.HtmlEncode(FormatBio(Eval("Bio"))) %></p>
+                            <%# FormatInterestTags(Eval("Interests")) %>
+                        </div>
+                    </article>
+                </ItemTemplate>
+                <FooterTemplate>
+                    </div>
+                </FooterTemplate>
+            </asp:Repeater>
+        </section>
+
         <section class="content-grid">
             <article class="panel">
                 <img src="https://placehold.co/600x360/dbe9f5/1a202c?text=Bit2Byte+Team" alt="Bit2Byte team members collaborating">

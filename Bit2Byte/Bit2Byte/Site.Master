@@ -14,7 +14,7 @@
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link href="<%: ResolveUrl("~/style.css?v=20260611") %>" rel="stylesheet" />
+    <link href="<%: ResolveUrl("~/style.css?v=20260612") %>" rel="stylesheet" />
 
 </head>
 <body>

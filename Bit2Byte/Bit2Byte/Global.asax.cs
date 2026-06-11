@@ -6,6 +6,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using Bit2Byte.Data;
 
 namespace Bit2Byte
 {
@@ -14,6 +15,7 @@ namespace Bit2Byte
         void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
+            SchemaHelper.EnsureSchema();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }

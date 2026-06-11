@@ -17,7 +17,13 @@ BEGIN
         Id INT IDENTITY(1,1) PRIMARY KEY,
         Username NVARCHAR(100) NOT NULL UNIQUE,
         Email NVARCHAR(256) NOT NULL UNIQUE,
+        PendingEmail NVARCHAR(256) NULL,
         PasswordHash NVARCHAR(256) NOT NULL,
+        AvatarPath NVARCHAR(260) NULL,
+        Bio NVARCHAR(MAX) NULL,
+        Interests NVARCHAR(MAX) NULL,
+        EmailChangeToken NVARCHAR(100) NULL,
+        EmailChangeTokenExpires DATETIME NULL,
         IsActive BIT NOT NULL DEFAULT 1,
         Role NVARCHAR(50) NOT NULL DEFAULT 'member',
         CreatedAt DATETIME NOT NULL DEFAULT GETDATE()
@@ -47,6 +53,12 @@ GO
 -- If you already have a Users table and need to add the Role column, run:
 IF EXISTS (SELECT 1 FROM sys.tables t JOIN sys.schemas s ON t.schema_id = s.schema_id WHERE t.name='Users' AND s.name='dbo')
 BEGIN
+    IF COL_LENGTH('dbo.Users','PendingEmail') IS NULL ALTER TABLE dbo.Users ADD PendingEmail NVARCHAR(256) NULL;
+    IF COL_LENGTH('dbo.Users','AvatarPath') IS NULL ALTER TABLE dbo.Users ADD AvatarPath NVARCHAR(260) NULL;
+    IF COL_LENGTH('dbo.Users','Bio') IS NULL ALTER TABLE dbo.Users ADD Bio NVARCHAR(MAX) NULL;
+    IF COL_LENGTH('dbo.Users','Interests') IS NULL ALTER TABLE dbo.Users ADD Interests NVARCHAR(MAX) NULL;
+    IF COL_LENGTH('dbo.Users','EmailChangeToken') IS NULL ALTER TABLE dbo.Users ADD EmailChangeToken NVARCHAR(100) NULL;
+    IF COL_LENGTH('dbo.Users','EmailChangeTokenExpires') IS NULL ALTER TABLE dbo.Users ADD EmailChangeTokenExpires DATETIME NULL;
     IF COL_LENGTH('dbo.Users','Role') IS NULL
     BEGIN
         ALTER TABLE dbo.Users ADD Role NVARCHAR(50) NOT NULL CONSTRAINT DF_Users_Role DEFAULT 'member';
