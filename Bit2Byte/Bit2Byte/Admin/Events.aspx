@@ -15,7 +15,7 @@
             </div>
             <div class="form-group">
                 <asp:Label runat="server" AssociatedControlID="NewDate" Text="Event Date" />
-                <asp:TextBox ID="NewDate" runat="server" TextMode="DateTime" CssClass="form-control" placeholder="2026-06-12 14:30" />
+                <asp:TextBox ID="NewDate" runat="server" TextMode="DateTime" CssClass="form-control" placeholder="yyyy-MM-dd HH:mm" />
                 <p class="form-hint muted">Format: yyyy-MM-dd HH:mm (example: 2026-06-12 14:30). Date only, such as 2026-06-12, also works.</p>
             </div>
             <div class="form-group">

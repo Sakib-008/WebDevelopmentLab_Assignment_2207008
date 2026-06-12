@@ -85,63 +85,6 @@ namespace Bit2Byte.MemberProfiles
             }
         }
 
-        protected void RequestEmailChangeButton_Click(object sender, EventArgs e)
-        {
-            if (!(Session[SessionKeys.UserId] is int uid))
-            {
-                Response.Redirect(ResolveUrl("~/login.aspx"), true);
-                return;
-            }
-
-            var newEmail = NewEmailTextBox.Text.Trim();
-            var password = EmailCurrentPasswordTextBox.Text;
-
-            if (string.IsNullOrWhiteSpace(newEmail) || !Regex.IsMatch(newEmail, @"^[^\s@]+@[^\s@]+\.[^\s@]+$"))
-            {
-                EmailChangeLinkLiteral.Text = "<div class=\"validation-error\">Enter a valid email address.</div>";
-                return;
-            }
-
-            var repo = new UserRepository();
-            var user = repo.GetById(uid);
-            if (user == null)
-            {
-                EmailChangeLinkLiteral.Text = "<div class=\"validation-error\">User not found.</div>";
-                return;
-            }
-
-            if (!PasswordHelper.VerifyPassword(password, user.PasswordHash))
-            {
-                EmailChangeLinkLiteral.Text = "<div class=\"validation-error\">Current password is incorrect.</div>";
-                return;
-            }
-
-            if (string.Equals(newEmail, user.Email, StringComparison.OrdinalIgnoreCase))
-            {
-                EmailChangeLinkLiteral.Text = "<div class=\"validation-error\">New email must be different from the current one.</div>";
-                return;
-            }
-
-            if (repo.IsEmailInUse(newEmail, user.Id))
-            {
-                EmailChangeLinkLiteral.Text = "<div class=\"validation-error\">That email is already in use.</div>";
-                return;
-            }
-
-            var token = Guid.NewGuid().ToString("N");
-            var expiresUtc = DateTime.UtcNow.AddHours(24);
-            if (repo.RequestEmailChange(user.Id, newEmail, token, expiresUtc))
-            {
-                var confirmUrl = ResolveUrl("~/Members/ConfirmEmailChange.aspx?token=" + HttpUtility.UrlEncode(token));
-                EmailChangeLinkLiteral.Text = "<div class=\"success-message\">Confirmation link generated. Open this link to confirm your new email: <a href='" + confirmUrl + "'>" + confirmUrl + "</a></div>";
-                BindProfile();
-            }
-            else
-            {
-                EmailChangeLinkLiteral.Text = "<div class=\"validation-error\">Unable to create email change request.</div>";
-            }
-        }
-
         private void BindProfile()
         {
             if (!(Session[SessionKeys.UserId] is int uid))
@@ -164,11 +107,7 @@ namespace Bit2Byte.MemberProfiles
             BioTextBox.Text = user.Bio ?? string.Empty;
             BindInterests(user.Interests);
             BindAvatar(user);
-
-            if (!string.IsNullOrWhiteSpace(user.PendingEmail))
-            {
-                EmailChangeLinkLiteral.Text = "<div class=\"validation-summary\">Pending email change: <strong>" + HttpUtility.HtmlEncode(user.PendingEmail) + "</strong></div>";
-            }
+     
         }
 
         private void BindAvatar(Data.Models.User user)

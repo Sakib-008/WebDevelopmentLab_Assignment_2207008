@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "S:\\3-1\\CSE 3100 (Web Programming Laboratory)\\Project 1\\Bit2Byte\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{91C70CCE-42EF-4B24-BAAA-FA90FE71F338}|Bit2Byte\\Bit2Byte.csproj|s:\\3-1\\cse 3100 (web programming laboratory)\\project 1\\bit2byte\\bit2byte\\members\\profile.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91C70CCE-42EF-4B24-BAAA-FA90FE71F338}|Bit2Byte\\Bit2Byte.csproj|solutionrelative:bit2byte\\members\\profile.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{91C70CCE-42EF-4B24-BAAA-FA90FE71F338}|Bit2Byte\\Bit2Byte.csproj|s:\\3-1\\cse 3100 (web programming laboratory)\\project 1\\bit2byte\\bit2byte\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{91C70CCE-42EF-4B24-BAAA-FA90FE71F338}|Bit2Byte\\Bit2Byte.csproj|solutionrelative:bit2byte\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
@@ -18,11 +22,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Profile.aspx.cs",
+              "DocumentMoniker": "S:\\3-1\\CSE 3100 (Web Programming Laboratory)\\Project 1\\Bit2Byte\\Bit2Byte\\Members\\Profile.aspx.cs",
+              "RelativeDocumentMoniker": "Bit2Byte\\Members\\Profile.aspx.cs",
+              "ToolTip": "S:\\3-1\\CSE 3100 (Web Programming Laboratory)\\Project 1\\Bit2Byte\\Bit2Byte\\Members\\Profile.aspx.cs",
+              "RelativeToolTip": "Bit2Byte\\Members\\Profile.aspx.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAowGwAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-12T17:32:51.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Users.aspx",
               "DocumentMoniker": "S:\\3-1\\CSE 3100 (Web Programming Laboratory)\\Project 1\\Bit2Byte\\Bit2Byte\\Admin\\Users.aspx",
               "RelativeDocumentMoniker": "Bit2Byte\\Admin\\Users.aspx",
@@ -34,7 +51,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Default.aspx",
               "DocumentMoniker": "S:\\3-1\\CSE 3100 (Web Programming Laboratory)\\Project 1\\Bit2Byte\\Bit2Byte\\Default.aspx",
               "RelativeDocumentMoniker": "Bit2Byte\\Default.aspx",

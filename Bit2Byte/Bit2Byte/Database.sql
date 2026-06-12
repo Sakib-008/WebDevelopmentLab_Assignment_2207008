@@ -49,8 +49,6 @@ GO
 -- Sample inserts (optional) - replace password hashes before use
 -- INSERT INTO dbo.Users (Username, Email, PasswordHash) VALUES ('admin','admin@example.com','<replace-with-hash>');
 -- INSERT INTO dbo.Events (Title, Description, EventDate, CreatedByUserId) VALUES ('Launch','Project launch','2026-06-01',1);
-
--- If you already have a Users table and need to add the Role column, run:
 IF EXISTS (SELECT 1 FROM sys.tables t JOIN sys.schemas s ON t.schema_id = s.schema_id WHERE t.name='Users' AND s.name='dbo')
 BEGIN
     IF COL_LENGTH('dbo.Users','PendingEmail') IS NULL ALTER TABLE dbo.Users ADD PendingEmail NVARCHAR(256) NULL;

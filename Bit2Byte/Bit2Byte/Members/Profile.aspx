@@ -67,20 +67,6 @@
                     <asp:TextBox ID="ConfirmPassword" runat="server" TextMode="Password" CssClass="form-control" />
                 </div>
                 <hr />
-                <h3>Change Email</h3>
-                <p class="muted">You will need to confirm the change with a token link after requesting it.</p>
-                <div class="form-group">
-                    <label>New Email</label>
-                    <asp:TextBox ID="NewEmailTextBox" runat="server" CssClass="form-control" TextMode="Email" />
-                </div>
-                <div class="form-group">
-                    <label>Current Password for Email Change</label>
-                    <asp:TextBox ID="EmailCurrentPasswordTextBox" runat="server" TextMode="Password" CssClass="form-control" />
-                </div>
-                <div class="form-group">
-                    <asp:Button ID="RequestEmailChangeButton" runat="server" Text="Request Email Change" CssClass="btn btn-outline-secondary" OnClick="RequestEmailChangeButton_Click" />
-                </div>
-                <asp:Literal ID="EmailChangeLinkLiteral" runat="server" />
             </div>
         </section>
     </main>
