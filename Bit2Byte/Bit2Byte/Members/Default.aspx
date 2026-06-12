@@ -9,6 +9,7 @@
             <div class="button-group">
                 <asp:HyperLink ID="ProfileLink" runat="server" CssClass="button button-primary" NavigateUrl="~/Members/Profile.aspx">My Profile</asp:HyperLink>
                 <asp:HyperLink ID="EventsLink" runat="server" CssClass="button button-secondary" NavigateUrl="~/Events.aspx">View Events</asp:HyperLink>
+                <asp:HyperLink ID="CommunityLink" runat="server" CssClass="button button-primary" NavigateUrl="~/Members/list">View Community</asp:HyperLink>
             </div>
         </section>
 

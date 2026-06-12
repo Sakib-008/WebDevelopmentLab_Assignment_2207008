@@ -44,8 +44,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-  <Content Include="Admin\Users.aspx" />
-  <Content Include="Admin\Events.aspx" />
+    <Content Include="Admin\Users.aspx" />
+    <Content Include="Admin\Events.aspx" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -130,7 +130,6 @@
     <Content Include="Members.aspx" />
     <Content Include="Members\Default.aspx" />
     <Content Include="Members\Profile.aspx" />
-    <Content Include="Members\ConfirmEmailChange.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="script.js" />
     <Content Include="style.css" />
@@ -287,13 +286,6 @@
     </Compile>
     <Compile Include="Members\Profile.aspx.designer.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Members\ConfirmEmailChange.aspx.cs">
-      <DependentUpon>ConfirmEmailChange.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Members\ConfirmEmailChange.aspx.designer.cs">
-      <DependentUpon>ConfirmEmailChange.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">

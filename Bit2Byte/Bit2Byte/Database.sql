@@ -64,10 +64,3 @@ BEGIN
         ALTER TABLE dbo.Users ADD Role NVARCHAR(50) NOT NULL CONSTRAINT DF_Users_Role DEFAULT 'member';
     END
 END
-
--- Make an existing user an admin (replace email as needed):
--- UPDATE dbo.Users SET Role='admin' WHERE Email='admin@example.com';
-
--- Notes:
--- 1) Open this file in SSMS and execute. If you use a different SQL Server instance, change the connection in Web.config accordingly.
--- 2) For production, store password hashes (e.g. PBKDF2/BCrypt) rather than plaintext.
