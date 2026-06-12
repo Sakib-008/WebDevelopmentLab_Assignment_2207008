@@ -70,6 +70,8 @@ S:\Self\Web Dev\Local\Bit2Byte\Bit2Byte\obj\Debug\Bit2Byte.csproj.CoreCompileInp
 S:\Self\Web Dev\Local\Bit2Byte\Bit2Byte\obj\Debug\Bit2Byte.csproj.Up2Date
 S:\Self\Web Dev\Local\Bit2Byte\Bit2Byte\obj\Debug\Bit2Byte.dll
 S:\Self\Web Dev\Local\Bit2Byte\Bit2Byte\obj\Debug\Bit2Byte.pdb
+S:\3-1\CSE 3100 (Web Programming Laboratory)\Project 1\Bit2Byte\Bit2Byte\obj\Debug\Bit2Byte.csproj.AssemblyReference.cache
+S:\3-1\CSE 3100 (Web Programming Laboratory)\Project 1\Bit2Byte\Bit2Byte\obj\Debug\Bit2Byte.csproj.CoreCompileInputs.cache
 S:\3-1\CSE 3100 (Web Programming Laboratory)\Project 1\Bit2Byte\Bit2Byte\bin\Bit2Byte.dll.config
 S:\3-1\CSE 3100 (Web Programming Laboratory)\Project 1\Bit2Byte\Bit2Byte\bin\Bit2Byte.dll
 S:\3-1\CSE 3100 (Web Programming Laboratory)\Project 1\Bit2Byte\Bit2Byte\bin\Bit2Byte.pdb
@@ -137,8 +139,6 @@ S:\3-1\CSE 3100 (Web Programming Laboratory)\Project 1\Bit2Byte\Bit2Byte\bin\New
 S:\3-1\CSE 3100 (Web Programming Laboratory)\Project 1\Bit2Byte\Bit2Byte\bin\Antlr3.Runtime.pdb
 S:\3-1\CSE 3100 (Web Programming Laboratory)\Project 1\Bit2Byte\Bit2Byte\bin\Microsoft.AspNet.FriendlyUrls.xml
 S:\3-1\CSE 3100 (Web Programming Laboratory)\Project 1\Bit2Byte\Bit2Byte\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-S:\3-1\CSE 3100 (Web Programming Laboratory)\Project 1\Bit2Byte\Bit2Byte\obj\Debug\Bit2Byte.csproj.AssemblyReference.cache
-S:\3-1\CSE 3100 (Web Programming Laboratory)\Project 1\Bit2Byte\Bit2Byte\obj\Debug\Bit2Byte.csproj.CoreCompileInputs.cache
 S:\3-1\CSE 3100 (Web Programming Laboratory)\Project 1\Bit2Byte\Bit2Byte\obj\Debug\Bit2Byte.csproj.Up2Date
 S:\3-1\CSE 3100 (Web Programming Laboratory)\Project 1\Bit2Byte\Bit2Byte\obj\Debug\Bit2Byte.dll
 S:\3-1\CSE 3100 (Web Programming Laboratory)\Project 1\Bit2Byte\Bit2Byte\obj\Debug\Bit2Byte.pdb

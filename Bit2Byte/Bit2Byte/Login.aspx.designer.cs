@@ -20,5 +20,7 @@ namespace Bit2Byte
         protected global::System.Web.UI.WebControls.TextBox PasswordTextBox;
 
         protected global::System.Web.UI.WebControls.Button LoginButton;
+
+        protected global::System.Web.UI.WebControls.CheckBox RememberMeCheckBox;
     }
 }

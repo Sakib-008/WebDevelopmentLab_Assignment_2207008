@@ -23,6 +23,7 @@
             <div class="form-group">
                 <asp:Button ID="LoginButton" runat="server" Text="Login" CssClass="submit-button" OnClick="LoginButton_Click" />
             </div>
+            <asp:CheckBox ID="RememberMeCheckBox" runat="server" Text="Remember me" />
         </div>
     </main>
 </asp:Content>

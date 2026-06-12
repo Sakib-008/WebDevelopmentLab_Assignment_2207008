@@ -1,4 +1,5 @@
 using System;
+using System.Web;
 using System.Web.UI;
 
 namespace Bit2Byte
@@ -11,6 +12,14 @@ namespace Bit2Byte
             {
                 Response.Redirect(ResolveUrl("~/members.aspx"), true);
             }
+            if (!IsPostBack)
+            {
+            if (Request.Cookies["UserEmail"] != null)
+            {
+                EmailTextBox.Text = Request.Cookies["UserEmail"].Value;
+                RememberMeCheckBox.Checked = true;
+            }
+    }
         }
 
         protected void LoginButton_Click(object sender, EventArgs e)
@@ -33,6 +42,25 @@ namespace Bit2Byte
                 Session[SessionKeys.UserId] = user.Id;
                 Session[SessionKeys.Authenticated] = true;
                 Session[SessionKeys.Role] = user.Role;
+
+                if (RememberMeCheckBox.Checked)
+                {
+                    HttpCookie cookie = new HttpCookie("UserEmail");
+                    cookie.Value = user.Email;
+                    cookie.Expires = DateTime.Now.AddDays(7);
+                    Response.Cookies.Add(cookie);
+                }
+                else
+                {
+                // remove cookie if exists
+                if (Request.Cookies["UserEmail"] != null)
+                {
+                    HttpCookie cookie = new HttpCookie("UserEmail");
+                    cookie.Expires = DateTime.Now.AddDays(-1);
+                    Response.Cookies.Add(cookie);
+                }
+                }
+
                 Response.Redirect(ResolveUrl("~/members.aspx"), true);
                 return;
             }
